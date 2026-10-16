@@ -12,12 +12,10 @@ jobs:
         run: |
           mkdir proj
           for f in *.zip; do unzip -o "$f" -d proj; done
-          find proj -maxdepth 3 | head -50
       - uses: actions/setup-java@v4
         with:
           distribution: zulu
           java-version: '17'
-      - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.7'
